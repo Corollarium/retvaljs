@@ -17,7 +17,7 @@
 	  "url": "https://github.com/Corollarium/retval.js"
 	},
 	"scripts": {
-		"lint": "node_modules/.bin/eslint -c .eslintrc.json .",
+		"lint": "node_modules/.bin/eslint -c .eslintrc.json retval.js",
 		"test": "node_modules/.bin/mocha test.js"
 	},
 	"dependencies": {},
