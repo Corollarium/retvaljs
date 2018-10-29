@@ -1,0 +1,28 @@
+{
+	"name": "@corollarium/retval.js",
+	"version": "0.0.0",
+	"description": "",
+	"keywords": [
+	],
+	"homepage": "https://github.com/Corollarium/retval.js",
+	"license": "MIT",
+	"author": {
+	  "name": "Corollarium",
+	  "url": "https://corollarium.com"
+	},
+	"main": "retval.js",
+	"browser": "retval.js",
+	"repository": {
+	  "type": "git",
+	  "url": "https://github.com/Corollarium/retval.js"
+	},
+	"scripts": {
+		"lint": "node_modules/.bin/eslint -c .eslintrc.json .",
+		"test": "node_modules/.bin/mocha test.js"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"eslint": "^5.8.0",
+		"mocha": "^5.2.0"
+	}
+}
