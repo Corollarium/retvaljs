@@ -1,7 +1,7 @@
 {
 	"name": "@corollarium/retvaljs",
-	"version": "1.0.0",
-	"description": "",
+	"version": "1.1.0",
+	"description": "Simple class that represents either a success or failure.",
 	"keywords": [
 	],
 	"homepage": "https://github.com/Corollarium/retvaljs",
