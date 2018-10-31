@@ -10,7 +10,7 @@ class Retval {
 		return new Retval(false, message, ...data);
 	}
 
-	constructor(status, message, ...data) {
+	constructor(status, message = '', ...data) {
 		this.status = status;
 		this.message = message;
 		this.__retvalData__ = [];
