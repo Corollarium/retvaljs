@@ -10,18 +10,23 @@ class Retval {
 		return new Retval(false, message, ...data);
 	}
 
-	constructor(status, message, data = {}) {
+	constructor(status, message, ...data) {
 		this.status = status;
 		this.message = message;
+		this.__retvalData__ = [];
 
-		if (typeof data === 'object') {
-			for (let key in data) {
-				this[key] = data[key];
+		if (data.length === 1 && typeof data[0] === 'object') {
+			for (let key in data[0]) {
+				this[key] = data[0][key];
 			}
 		}
 		else {
-			this.data = data;
+			this.__retvalData__ = data;
 		}
+	}
+
+	data() {
+		return this.__retvalData__;
 	}
 
 	throws() {
