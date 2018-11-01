@@ -21,7 +21,7 @@ class Retval {
 				}
 			}
 			else {
-				this.data = data;
+				this.data = data[0];
 			}
 		}
 		else if (data.length) {

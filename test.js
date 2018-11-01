@@ -38,10 +38,18 @@ describe('Retval tests', function() {
 		}
 	});
 
-	it('Pass an object as parameter to `data`', function() {
+	it('Pass an object as `data`', function() {
 		let retval = Retval.success('', {test: 10, two: 2});
 		assert.equal(10, retval.test);
 		assert.equal(2, retval.two);
+	});
+
+	it('Pass a single scalar value as `data`', function() {
+		let retval = Retval.success('', false);
+		assert.equal(false, retval.data);
+
+		let retval2 = Retval.success('', 'testing');
+		assert.equal('testing', retval2.data);
 	});
 
 	it('Retval.data with multiple values', function() {
