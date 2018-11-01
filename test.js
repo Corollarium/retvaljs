@@ -13,14 +13,14 @@ describe('Retval tests', function() {
 		assert.equal('ok!', retval.message);
 		assert.deepEqual([1, 2, 3], retval.users);
 		assert.equal(10, retval.id);
-		assert.deepEqual([], retval.data());
+		assert.deepEqual(undefined, retval.data);
 	});
 
 	it('new Retval(false)', function() {
 		let retval = new Retval(false, 'Write failure');
 		assert.equal(false, retval.status);
 		assert.equal('Write failure', retval.message);
-		assert.deepEqual([], retval.data());
+		assert.deepEqual(undefined, retval.data);
 	});
 
 	it('Retval.throws()', function() {
@@ -38,8 +38,14 @@ describe('Retval tests', function() {
 		}
 	});
 
-	it('Retval.data()', function() {
+	it('Pass an object as parameter to `data`', function() {
+		let retval = Retval.success('', {test: 10, two: 2});
+		assert.equal(10, retval.test);
+		assert.equal(2, retval.two);
+	});
+
+	it('Retval.data with multiple values', function() {
 		let retval = Retval.success('', 10, 20, 30, 40);
-		assert.deepEqual([10, 20, 30, 40], retval.data());
+		assert.deepEqual([10, 20, 30, 40], retval.data);
 	});
 });
